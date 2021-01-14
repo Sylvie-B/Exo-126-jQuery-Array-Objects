@@ -29,3 +29,34 @@ $.each(arrObj, function(index, value) {
    console.log("Affichage age utilisant jQuery = " + value.age);
 });
 
+//
+let frame = document.createElement('div');
+frame.style.display = 'flex';
+frame.style.flexDirection = 'column';
+frame.style.alignItems = 'center';
+document.body.appendChild(frame);
+
+let pict = document.createElement('img');
+pict.src = arrObj[0].avatar;
+frame.appendChild(pict);
+
+let user = document.createElement('span');
+user.innerHTML = arrObj[0].person;
+frame.appendChild(user);
+
+let age = document.createElement('span');
+age.innerHTML = ' ( ' + arrObj[0].age + ' ans )';
+user.appendChild(age);
+
+let controls = document.createElement('div');
+controls.style.fontSize = "3vw";
+let previous = document.createElement('span');
+previous.style.margin = "0 2vw";
+let next = document.createElement('span');
+next.style.margin = "0 2vw";
+previous.innerHTML = '<';
+next.innerHTML = '>';
+
+controls.appendChild(previous);
+controls.appendChild(next);
+frame.appendChild(controls);
